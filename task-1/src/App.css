@@ -1,0 +1,169 @@
+/* Layout & Typography */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  padding: 16px 0;
+}
+
+.bullet {
+  padding: 10px 14px;
+  margin: 8px 12px;
+  border-radius: 12px;
+  color: #6b7280;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.bullet:hover, .bullet.active {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.bullet.active { font-weight: 500; }
+
+/* Content & Sections */
+.content {
+  flex: 1;
+  padding: 24px;
+  padding-bottom: 300px;
+}
+
+.section {
+  min-height: 70vh;
+  padding: 24px;
+  margin-bottom: 16px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+/* Form Fields */
+.field input, .field textarea, .field select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #374151;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none;
+  border-color: #a5b4fc;
+  box-shadow: 0 0 0 2px rgba(165, 180, 252, 0.25);
+  background: #fff;
+}
+
+/* Components & Overlays */
+.loader {
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.submission-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .list-unstyled{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+    #A, #B, #C, #D {
+        padding-top: 10rem !important;
+        /* border: 2px solid; */
+    }
+  /* Sidebar becomes top navigation */
+  .sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    padding: 10px;
+    gap: 8px;
+
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    background: #ffffff;
+  }
+
+  .bullet {
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 8px 14px;
+    font-size: 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .content {
+    padding: 12px;
+    padding-bottom: 20rem;
+
+  }
+
+  .section {
+    min-height: auto;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+
+  /* Inputs become more touch-friendly */
+  .field input,
+  .field textarea,
+  .field select {
+    font-size: 16px; /* prevents zoom on iOS */
+    padding: 12px;
+    margin: 8px 0;
+  }
+
+  /* Submit button full width on mobile */
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+  
+}
